@@ -7,3 +7,8 @@
 # Keep all app folders inside any directory
 !*/app/
 !*/app/**
+
+# Ignore virtual environments
+venv/
+*/venv/
+**/venv/
