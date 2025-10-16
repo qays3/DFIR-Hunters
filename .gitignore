@@ -1,0 +1,13 @@
+# Ignore everything by default
+*
+
+# Keep .gitignore itself
+!.gitignore
+
+# Include only app folders inside main directories
+!*/app/
+!*/app/**
+
+# Ignore virtual environments
+venv/
+*/venv/
