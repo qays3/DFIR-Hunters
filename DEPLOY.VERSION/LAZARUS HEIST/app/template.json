@@ -1,0 +1,12 @@
+{
+  "xor_key": "Encryption_Key_String",
+  "pe_configuration": "C2_PRIMARY_C2_BACKUP_CAMPAIGN_ID",
+  "swift_forensics": "TOTAL_FRAUD_AMOUNT_USD_SWIFT_OPERATOR_PASSWORD",
+  "c2_protocol": "C2_HOST_SESSION_ID_FORMAT",
+  "crypto_mining": "WALLET_ADDRESS_FIRST_20_CHARS",
+  "data_exfiltration": "HTTP_PORT_CHUNK_COUNT",
+  "credential_compromise": "TOTAL_SYSTEMS:ADMIN_ACCOUNTS:DB_ADMIN_HASH_FIRST_16",
+  "attack_timeline": "KEYLOGGER_PORT_MINING_PORT_BACKDOOR_PORT",
+  "persistence_analysis": "Capabilities_Sessionprefix_Unknown",
+  "attribution": "TYPOSQUAT_DOMAIN_CAMPAIGN_ID_SWIFT_TARGETS"
+}

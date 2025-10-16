@@ -1,0 +1,56 @@
+/api/register
+/api/checkin
+/api/command
+/api/upload
+/api/download
+/api/status
+/api/victim
+/api/bot
+/gate.php
+/panel.php
+/admin.php
+/config.php
+/index.php
+/main.php
+/key
+/encrypt
+/payment
+/decrypt
+/victim
+/bitcoin
+/wallet
+/ransom
+/price
+/buy
+victim_id=
+machine_id=
+computer_name=
+username=
+os_version=
+encryption_key=
+file_list=
+drive_info=
+system_info=
+hwid=
+POST /gate
+GET /config
+POST /api
+Content-Type: multipart/form-data
+Content-Disposition: form-data
+boundary=
+boundary=----
+User-Agent: WinHTTP
+User-Agent: python-requests
+User-Agent: curl
+Accept: */*
+Connection: Keep-Alive
+Connection: close
+X-Session-ID:
+X-Machine-ID:
+X-Victim-ID:
+X-Bot-ID:
+Authorization: Bearer
+key=
+id=
+status=
+cmd=

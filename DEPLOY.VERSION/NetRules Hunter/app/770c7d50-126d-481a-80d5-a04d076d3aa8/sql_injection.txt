@@ -1,0 +1,71 @@
+' OR '1'='1
+' OR 1=1--
+' OR 'a'='a
+admin'--
+' UNION SELECT
+UNION ALL SELECT
+' AND '1'='1
+' AND 1=1--
+; DROP TABLE
+; DELETE FROM
+'; EXEC
+'; EXECUTE
+CAST(0x
+CONCAT(0x
+' WAITFOR DELAY
+BENCHMARK(
+SLEEP(
+pg_sleep(
+' AND SLEEP(
+' OR SLEEP(
+' XOR '1'='1
+1' AND '1'='1
+1' OR '1'='1
+' OR username LIKE '%
+' OR email LIKE '%
+' OR password LIKE '%
+HAVING 1=1--
+GROUP BY
+ORDER BY
+' INTO OUTFILE
+' INTO DUMPFILE
+LOAD_FILE(
+' AND (SELECT
+' OR (SELECT
+@@version
+@@datadir
+@@hostname
+@@basedir
+information_schema
+mysql.user
+sys.tables
+sys.databases
+sys.objects
+sysobjects
+syscolumns
+xp_cmdshell
+sp_executesql
+sp_configure
+'; SHUTDOWN--
+CHAR(0x
+CHR(0x
+0x3a3a
+EXTRACTVALUE(
+UPDATEXML(
+name FROM syscolumns
+table_name FROM information_schema
+column_name FROM information_schema
+user()
+current_user
+session_user
+database()
+schema()
+version()
+' AND ASCII
+' AND SUBSTRING
+' AND MID(
+UNION SELECT NULL
+UNION SELECT 1,2,3
+concat(username,0x3a,password)
+group_concat(
+' AND 1=2 UNION SELECT

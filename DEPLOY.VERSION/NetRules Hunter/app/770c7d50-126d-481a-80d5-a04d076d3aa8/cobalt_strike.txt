@@ -1,0 +1,50 @@
+/submit.php
+/pixel.gif
+/activity
+/fakeurl
+/match
+/updates
+/download
+/push
+/rest
+/api/v1
+/api/v2
+/load
+/__utm.gif
+/ga.js
+/ptj
+/pixel
+/j.ad
+Cookie: SESSIONID=
+Cookie: MZ=
+Cookie: __cfduid=
+Cookie: __utma=
+Cookie: session=
+Accept: */*
+Accept: text/html
+Accept: text/html,application/xhtml+xml
+Accept-Language: en-US
+Accept-Language: en-US,en
+Accept-Encoding: gzip, deflate
+Accept-Encoding: gzip
+User-Agent: Mozilla/5.0
+User-Agent: Microsoft
+User-Agent: Internet Explorer
+User-Agent: Mozilla/4.0
+User-Agent: Mozilla/5.0 (compatible; MSIE
+beacon
+tasks
+metadata
+output
+http-get
+http-post
+Content-Type: application/octet-stream
+application/x-www-form-urlencoded
+HTTP/1.1 200 OK
+Server: Apache
+Server: nginx
+Server: Microsoft-IIS
+Server: Apache/2.
+Server: nginx/1.
+Connection: close
+Connection: keep-alive

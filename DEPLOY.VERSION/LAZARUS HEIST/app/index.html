@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAZARUS HEIST</title>
+    <link rel="icon" type="image/png" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/108647316.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/108647316.png">
+    <link rel="stylesheet" href="assets/css/root.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">LAZARUS HEIST</h1>
+            <p class="subtitle">Banking APT Analysis - Investigate sophisticated financial cyberattack</p>
+            <div class="info-box">
+                <p>Lazarus Group conducted a complex multi-stage attack targeting a bank's SWIFT gateway system. Analyze the malware, network traffic, and compromised systems to uncover the complete attack chain and $96M fraud operation.</p>
+            </div>
+        </header>
+
+        <div class="malware-grid" id="challengesGrid"></div>
+
+        <div class="upload-section">
+            <div class="upload-box">
+                <input type="file" id="yaraFile" accept=".json" class="file-input">
+                <label for="yaraFile" class="file-label">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                    </svg>
+                    <span class="file-label-text">Choose Findings File (.json)</span>
+                </label>
+                <div class="file-name" id="fileName"></div>
+            </div>
+            <div class="button-group">
+                <button id="scanBtn" class="scan-btn" disabled>
+                    <svg class="scan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    Analyze Findings
+                </button>
+                <a href="/template.json" download="template.json" class="download-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Template
+                </a>
+                <a href="/LAZARUS_HEIST.zip" download="LAZARUS_HEIST.zip" class="download-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Evidence
+                </a>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="results-header">
+                <h2 class="results-title">Analysis Results</h2>
+                <div class="results-score">
+                    <span id="detectedCount">0</span> / <span id="totalCount">10</span> Correct
+                </div>
+            </div>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+
+        <div class="flag-section" id="flagSection">
+            <div class="flag-container">
+                <div class="flag-header">
+                    <svg class="flag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                        <line x1="4" y1="22" x2="4" y2="15"/>
+                    </svg>
+                    <h2 class="flag-title">Challenge Completed!</h2>
+                </div>
+                <p class="flag-message">Outstanding work! You successfully investigated the Lazarus Group banking heist and uncovered the complete attack chain!</p>
+                <div class="flag-box">
+                    <code class="flag-code" id="flagCode"></code>
+                    <button class="copy-flag-btn" id="copyFlag">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-text">
+            Developed by <a href="https://qayssarayra.com" target="_blank" rel="noopener noreferrer" class="footer-link">Qays Sarayra</a>
+        </p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

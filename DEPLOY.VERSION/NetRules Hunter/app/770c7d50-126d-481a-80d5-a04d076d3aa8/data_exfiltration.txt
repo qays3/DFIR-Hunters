@@ -1,0 +1,80 @@
+filename=
+document=
+file=
+upload=
+data=
+content=
+attachment=
+archive=
+backup=
+export=
+transfer=
+send=
+share=
+.zip
+.rar
+.7z
+.tar
+.gz
+.bz2
+.tgz
+.pdf
+.doc
+.docx
+.xls
+.xlsx
+.ppt
+.pptx
+.csv
+.txt
+.sql
+.db
+.mdb
+.accdb
+.sqlite
+confidential
+secret
+private
+internal
+restricted
+classified
+password
+credential
+financial
+payroll
+salary
+employee
+customer
+client
+account
+invoice
+report
+budget
+contract
+agreement
+sensitive
+proprietary
+Content-Type: multipart/form-data
+Content-Type: application/x-www-form-urlencoded
+Content-Type: application/octet-stream
+Content-Type: application/zip
+Content-Type: application/pdf
+Content-Type: application/msword
+Content-Disposition: attachment
+Content-Disposition: form-data
+POST /upload
+POST /share
+POST /send
+POST /transfer
+POST /backup
+POST /export
+POST /sync
+POST /file
+base64,
+data:image
+data:application
+data:text
+name="file"
+name="document"
+name="upload"
+name="attachment"

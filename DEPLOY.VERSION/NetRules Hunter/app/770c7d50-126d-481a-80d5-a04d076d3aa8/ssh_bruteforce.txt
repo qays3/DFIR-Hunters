@@ -1,0 +1,29 @@
+SSH-2.0
+diffie-hellman
+ssh-rsa
+ssh-dss
+ecdsa-sha2
+ssh-ed25519
+Failed password
+Invalid user
+Connection closed
+Received disconnect
+Connection reset
+publickey
+keyboard-interactive
+password
+aes128-ctr
+aes192-ctr
+aes256-ctr
+aes128-cbc
+aes256-cbc
+3des-cbc
+hmac-sha1
+hmac-sha2-256
+hmac-sha2-512
+hmac-md5
+zlib
+none
+kex_exchange
+hostkey
+session_id
