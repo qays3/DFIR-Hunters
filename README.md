@@ -126,28 +126,28 @@ DFIR-Hunters/
 docker build -t netrules .
 docker run -d --name NetRules -p 5001:5001 --restart unless-stopped netrules
 ```
-Access: http://localhost:5001
+Access: http://localhost:5001/?access=3338ff49-d84a-4684-930b-dbc6c218547d
 
 #### CryptoMiner Hunter
 ```bash
 docker build -t cryptominer .
 docker run -d --name CryptoMiner -p 5003:5003 --restart unless-stopped cryptominer
 ```
-Access: http://localhost:5003
+Access: http://localhost:5003/?access=3338ff49-d84a-4684-930b-dbc6c218547d
 
 #### APT41
 ```bash
 docker build -t apt41 .
 docker run -d --name APT41 -p 5007:5007 --restart unless-stopped apt41
 ```
-Access: http://localhost:5007
+Access: http://localhost:5007/?access=3338ff49-d84a-4684-930b-dbc6c218547d
 
 #### LAZARUS HEIST
 ```bash
 docker build -t lazarus .
 docker run -d --name LAZARUS -p 5005:5005 --restart unless-stopped lazarus
 ```
-Access: http://localhost:5005
+Access: http://localhost:5005/?access=3338ff49-d84a-4684-930b-dbc6c218547d
 
 ### Finals Round
 
