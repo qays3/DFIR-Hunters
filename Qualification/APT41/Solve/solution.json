@@ -1,0 +1,16 @@
+{
+  "initial_compromise": "2025-09-19_23:28:14",
+  "c2_infrastructure": "4:10",
+  "session_tracking": "8887f071f3c3e5a5583e19d737f52f1a:5",
+  "credential_harvesting": "shosho.ahmed:Summer2024!_shosho.ahmed:HR_P@ss123_s.ahmed.personal:MyPersonal$2024",
+  "dns_tunneling": "whoami_net_user_ipconfig",
+  "lateral_movement": "2025-09-19_23:28:34_172.25.1.10_172.25.1.11_172.25.1.101",
+  "malware_hash": "04fb0ccf3ef309b1cd587f609ab0e81e_CRACKSHOT",
+  "data_exfiltration": "1698:1",
+  "incident_response": "info@qayssarayra.com_3255",
+  "golden_ticket": "502c2ba5c4e1234567890abcdef12345_S-1-5-21-1234567890-1234567890-1234567890",
+  "anti_forensics": "2025-09-19_19:29:04_cleanup",
+  "persistence_mechanism": "1:5",
+  "file_server": "Employee_Database.xlsx_1",
+  "attack_chain": "B_E_A_C_D_F"
+}

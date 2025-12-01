@@ -1,0 +1,107 @@
+version: '3.8'
+services:
+  victim_ws1:
+    image: ubuntu:20.04
+    hostname: HR-WORKSTATION-01
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.100
+    volumes:
+      - ./scripts:/opt/scripts
+      - ./pcaps:/opt/pcaps
+      - ./payloads:/opt/payloads
+    command: bash -c "apt-get update -qq && apt-get install -y tcpdump curl wget netcat-openbsd python3 python3-requests dnsutils nmap openssh-client openssl xxd -qq && /opt/scripts/victim1.sh"
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+
+  victim_ws2:
+    image: ubuntu:20.04  
+    hostname: FINANCE-PC-02
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.101
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl wget netcat-openbsd python3 python3-requests openssh-server openssl -qq && /opt/scripts/victim2.sh"
+
+  victim_ws3:
+    image: ubuntu:20.04
+    hostname: DEV-MACHINE-03
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.102
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl wget netcat-openbsd git nodejs npm -qq && /opt/scripts/victim3.sh"
+
+  domain_controller:
+    image: ubuntu:20.04
+    hostname: CORP-DC-01
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.10
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y bind9 openssh-server samba openssl curl -qq && /opt/scripts/dc.sh"
+
+  file_server:
+    image: ubuntu:20.04
+    hostname: FILE-SRV-01
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.11
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y samba openssh-server -qq && /opt/scripts/fileserver.sh"
+
+  attacker_external:
+    image: ubuntu:20.04
+    hostname: external-vps
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.200
+    volumes:
+      - ./scripts:/opt/scripts  
+      - ./payloads:/opt/payloads
+    command: bash -c "apt-get update -qq && apt-get install -y python3 python3-requests netcat-openbsd socat curl wget openssl dnsutils python3-cryptography -qq && /opt/scripts/attacker.sh"
+
+  proxy_server:
+    image: ubuntu:20.04
+    hostname: proxy-internal
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.5
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y squid apache2-utils -qq && /opt/scripts/proxy.sh"
+
+  web_server:
+    image: nginx:alpine
+    hostname: legit-cdn
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.3
+    volumes:
+      - ./nginx_build/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
+
+  smtp_server:
+    image: ubuntu:20.04
+    hostname: mail-internal
+    networks:
+      internal_net:
+        ipv4_address: 172.25.1.4
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y postfix netcat-openbsd -qq && /opt/scripts/smtp.sh"
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+
+networks:
+  internal_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.1.0/24

@@ -1,0 +1,14 @@
+{
+  "ppid": "Number",
+  "timestamp": "YYYY-MM-DD_HH:MM:SS",
+  "network_connection": "IP:PORT",
+  "command_line": "./command_--args",
+  "working_directory": "/path/to/directory",
+  "cryptocurrency": "CryptoName",
+  "wallet_address": "Full wallet address",
+  "pool_domain": "domain.com",
+  "ssh_source_ip": "IP address",
+  "kernel_module": "module_name",
+  "process_id": "Number",
+  "process_tree": "parent->child->process"
+}

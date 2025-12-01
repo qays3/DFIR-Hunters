@@ -1,0 +1,7 @@
+{
+  "domain_name": "example.com",
+  "gpo_guid": "{GUID}",
+  "username": "hidden",
+  "decrypted_password": "pass",
+  "modification_date": "YYYY-MM-DD"
+}

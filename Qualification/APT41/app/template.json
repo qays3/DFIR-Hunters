@@ -1,0 +1,16 @@
+{
+  "initial_compromise": "YYYY-MM-DD_HH:MM:SS",
+  "c2_infrastructure": "X:Y",
+  "session_tracking": "Session-ID:X",
+  "credential_harvesting": "username1:password1_username2:password2_username3:password3",
+  "dns_tunneling": "command1_command2_command3",
+  "lateral_movement": "YYYY-MM-DD_HH:MM:SS_IP1_IP2_IP3",
+  "malware_hash": "Hash_FamilyName",
+  "data_exfiltration": "X:Y",
+  "incident_response": "address@domain.com_XXXX",
+  "golden_ticket": "Hash_SID",
+  "anti_forensics": "YYYY-MM-DD_HH:MM:SS_ActionName",
+  "persistence_mechanism": "X:Y",
+  "file_server": "Filename_X",
+  "attack_chain": "B_E_A_D_F_C"
+}

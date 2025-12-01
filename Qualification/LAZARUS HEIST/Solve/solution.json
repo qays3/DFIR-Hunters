@@ -1,0 +1,12 @@
+{
+  "xor_key": "L4z4ru5Gr0up2024K3y",
+  "pe_configuration": "update.microsoft-security.org:8443_cdn.adobe-updates.net:8443_SWIFT_HEIST_2024",
+  "swift_forensics": "96000000_Sw1ft$ecur3!",
+  "c2_protocol": "update.microsoft-security.org_LAZARUS-12345_BANK-WORKSTATION-01",
+  "crypto_mining": "4A7Bb2kHh9Ca8Y4BjP3t",
+  "data_exfiltration": "8080_4",
+  "credential_compromise": "4:2:e99a18c428cb38d5",
+  "attack_timeline": "9999_3333_4444",
+  "persistence_analysis": "4_LAZARUS_PERSIST",
+  "attribution": "update.microsoft-security.org_LAZARUS_SWIFT_HEIST_FINAL_EXFIL_LAZARUS_FRONT_COMPANY_LIMITED"
+}

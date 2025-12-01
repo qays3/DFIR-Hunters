@@ -1,7 +1,0 @@
-{
-  "gitlab_compromise": "Token_BranchName",
-  "financial_theft": "X_acc1_Acc2",
-  "credential_harvesting": "JWT_MongoDB://connection_string",
-  "backdoor_deployment": "X_identifier",
-  "attack_timeline": "X_Y"
-}

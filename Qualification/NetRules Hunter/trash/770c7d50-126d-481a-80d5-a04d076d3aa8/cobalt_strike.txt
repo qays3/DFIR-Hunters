@@ -1,0 +1,8 @@
+activity
+__cfduid
+load
+MSIE
+pixel
+submit
+__utm
+Windows NT

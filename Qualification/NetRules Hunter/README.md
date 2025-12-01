@@ -1,0 +1,3 @@
+Packet Hunter: Network Intrusion Detection Challenge
+
+Analyze a PCAP file containing 6 real attack patterns and write Snort rules to detect them all. This is a game - you can use generic signatures or extract exact values from the PCAP to stop attackers. Two winning strategies: (1) Write behavioral detection rules using common attack patterns and regex, or (2) Use tshark/Wireshark to find specific malicious IPs, domains, and payloads in the traffic and block those exact values. Mix both approaches for different attacks. Detect SSH brute force, SQL injection, DNS tunneling, Cobalt Strike beacons, ransomware C2, and data exfiltration with proper ports and unique content signatures (8+ chars). Have fun and capture the flag!

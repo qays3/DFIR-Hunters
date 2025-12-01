@@ -1,0 +1,11 @@
+{
+  "q1_hostname_ip": "hostname_IP",
+  "q2_github_url": "Github_link",
+  "q3_timestamp": "YYYY-MM-DD_HH:MM:SS",
+  "q4_payload": "base64",
+  "q5_temp_file": "/path/file",
+  "q6_backdoor_path": "/path/file",
+  "q7_c2_address": "IP_PORT",
+  "q8_time_interval": "Seconds",
+  "q9_backdoor_user": "username_UID"
+}

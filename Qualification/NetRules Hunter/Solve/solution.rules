@@ -1,0 +1,22 @@
+alert tcp any any -> any 22 (msg:"SSH Brute Force Attack"; content:"SSH-"; nocase; threshold: type threshold, track by_src, count 3, seconds 60; sid:1000001;)
+
+alert tcp any any -> any 80 (msg:"SQL Injection UNION SELECT"; content:"UNION"; nocase; sid:1000002;)
+alert tcp any any -> any 80 (msg:"SQL Injection OR Attack"; content:"OR"; nocase; sid:1000003;)
+alert tcp any any -> any 80 (msg:"SQL Injection DROP TABLE"; content:"DROP"; nocase; sid:1000004;)
+
+alert udp any any -> any 53 (msg:"DNS Tunneling Domain"; content:".t"; nocase; sid:1000005;)
+alert udp any any -> any 53 (msg:"DNS Tunneling Base64"; content:"-"; nocase; pcre:"/[a-zA-Z0-9]{10,}/"; sid:1000006;)
+alert udp any any -> any 53 (msg:"DNS Tunneling Exfil"; content:".e"; nocase; sid:1000007;)
+
+alert tcp any any -> any 443 (msg:"Cobalt Strike Beacon"; content:"/"; nocase; sid:1000008;)
+alert tcp any any -> any 443 (msg:"Cobalt Strike Pixel"; content:"."; nocase; sid:1000009;)
+alert tcp any any -> any 443 (msg:"Cobalt Strike Activity"; content:"activity"; nocase; sid:1000010;)
+
+alert tcp any any -> any 443 (msg:"Ransomware C2 Register"; content:"/api"; nocase; sid:1000011;)
+alert tcp any any -> any 443 (msg:"Ransomware C2 Checkin"; content:"checkin"; nocase; pcre:"/id=/"; sid:1000012;)
+alert tcp any any -> any 443 (msg:"Ransomware C2 Key Exchange"; content:"key="; nocase; sid:1000013;)
+
+alert tcp any any -> any 80 (msg:"Data Exfiltration"; content:"Content-Type: application/msword"; nocase; sid:1000014;)
+alert tcp any any -> any 80 (msg:"Data Exfiltration"; content:"Content-Disposition: form-data"; nocase; sid:1000015;)
+alert tcp any any -> any 80 (msg:"Data Exfiltration"; content:"POST /sync"; nocase; sid:1000016;)
+alert tcp any any -> any 80 (msg:"Data Exfiltration"; content:".sql"; nocase; sid:1000017;)

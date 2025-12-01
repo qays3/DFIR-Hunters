@@ -1,0 +1,100 @@
+version: '3.8'
+services:
+  public_web:
+    image: nginx:alpine
+    hostname: WEB-PUBLIC-01
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.10
+    volumes:
+      - ./scripts:/opt/scripts
+      - ./pcaps:/opt/pcaps
+      - ./web:/usr/share/nginx/html
+    command: sh -c "apk add --no-cache tcpdump curl netcat-openbsd python3 && tcpdump -i eth0 -w /opt/pcaps/cloud_attack.pcap -s 0 & nginx && /opt/scripts/web.sh"
+
+  public_api:
+    image: python:3.9-slim
+    hostname: API-PUBLIC-02
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.11
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd -qq && /opt/scripts/api.sh"
+
+  gitlab_server:
+    image: python:3.9-slim
+    hostname: GITLAB-CI-CD
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.20
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd git -qq && /opt/scripts/gitlab.sh"
+
+  gitlab_runner:
+    image: ubuntu:20.04
+    hostname: GITLAB-RUNNER
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.21
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd git python3 -qq && /opt/scripts/runner.sh"
+
+  prod_payment:
+    image: python:3.9-slim
+    hostname: PROD-PAYMENT
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.30
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd -qq && /opt/scripts/payment.sh"
+
+  prod_auth:
+    image: python:3.9-slim
+    hostname: PROD-AUTH
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.31
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd -qq && /opt/scripts/auth.sh"
+
+  prod_data:
+    image: python:3.9-slim
+    hostname: PROD-DATA
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.32
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd -qq && /opt/scripts/data.sh"
+
+  attacker_c2:
+    image: python:3.9-slim
+    hostname: attacker-c2
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.200
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd -qq && /opt/scripts/c2.sh"
+
+  fake_internet:
+    image: python:3.9-slim
+    hostname: fake-production
+    networks:
+      internal_net:
+        ipv4_address: 172.40.1.50
+    volumes:
+      - ./scripts:/opt/scripts
+    command: bash -c "apt-get update -qq && apt-get install -y curl netcat-openbsd -qq && /opt/scripts/fake_prod.sh"
+
+networks:
+  internal_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.40.1.0/24
